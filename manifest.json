@@ -3,11 +3,6 @@
     "short_name": "plantas",
     "icons": [
         {
-            "src": "images/camera_128.png",
-            "sizes": "128x128",
-            "type": "image/png"
-        },
-        {
             "src": "images/camera_256.png",
             "sizes": "256x256",
             "type": "image/png"
