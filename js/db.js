@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 async function addData() {
     const nome = document.getElementById('nome').value;
-    const arquivoImagem = window.fotoBlob; // <-- foto tirada
+    const arquivoImagem = window.fotoBlob; 
 
     if (!arquivoImagem) {
         showResult("Tire uma foto antes de salvar!");
@@ -121,7 +121,7 @@ async function updateData(nomeAntigo, imagemAntiga) {
 
     await store.put({
         nome: novoNome,
-        imagem: imagemAntiga // imagem mantida
+        imagem: imagemAntiga 
     });
 
     await tx.done;

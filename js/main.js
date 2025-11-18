@@ -1,4 +1,3 @@
-// Registrando a service worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
         try {
@@ -12,15 +11,13 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// configurando as constraines do video stream
-var constraints = { video: { facingMode: "user" }, audio: false };
-// capturando os elementos em tela
+var constraints = { video: { facingMode: "environment" }, audio: false };
+
 const cameraView = document.querySelector("#camera--view"),
       cameraOutput = document.querySelector("#camera--output"),
       cameraSensor = document.querySelector("#camera--sensor"),
       cameraTrigger = document.querySelector("#camera--trigger");
 
-// Estabelecendo o acesso a camera e inicializando a visualização
 function cameraStart() {
     navigator.mediaDevices
         .getUserMedia(constraints)
@@ -33,7 +30,6 @@ function cameraStart() {
         });
 }
 
-// Função para tirar foto
 cameraTrigger.onclick = function () {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
@@ -42,12 +38,10 @@ cameraTrigger.onclick = function () {
     cameraSensor.style.display = "block";
 
     cameraSensor.toBlob(function(blob) {
-        window.fotoBlob = blob; // <- guardar foto tirada
-        cameraOutput.src = URL.createObjectURL(blob); // preview
+        window.fotoBlob = blob; 
+        cameraOutput.src = URL.createObjectURL(blob); 
         cameraOutput.classList.add("taken");
     }, "image/webp");
 };
 
-
-// carrega imagem de camera quando a janela carregar
 window.addEventListener("load", cameraStart, false);
