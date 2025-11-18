@@ -57,7 +57,7 @@ body {
   margin-top: 15px;
 }
 
-#camera--trigger {
+#camera--trigger, #camera--switch {
   margin-top: 15px;
   width: 100%;
   padding: 12px;
@@ -69,7 +69,7 @@ body {
   cursor: pointer;
 }
 
-#camera--trigger:hover {
+#camera--trigger:hover, #camera--switch:hover {
   background: #2563eb;
 }
 
