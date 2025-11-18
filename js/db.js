@@ -48,6 +48,8 @@ async function addData() {
   });
 
   await tx.done;
+  const cameraOutput = document.getElementById("camera--sensor")
+  cameraOutput.style.display = 'none';
 
   document.getElementById("nome").value = "";
   showResult("Salvo com sucesso!");
