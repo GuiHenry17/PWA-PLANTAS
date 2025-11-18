@@ -99,6 +99,13 @@ window.editarPlanta = async function (nome) {
 
     document.getElementById('nome').value = plantas.nome;
 
+    // 🔥 SCROLL automátrico até o input
+    const input = document.getElementById('nome');
+    input.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
     const btn = document.getElementById("btnSalvar");
     btn.textContent = "Atualizar";
 
