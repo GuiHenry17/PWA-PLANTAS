@@ -59,11 +59,13 @@ function mostrarTabela(plantas) {
 
     return `
     <div>
-        <h2>${plantas.nome}</h2>
+        <h2 id="planta-nome">${plantas.nome}</h2>
         <img src="${urlImagem}" width="120">
         <br>
+        <div class="buttons">
         <button onclick="editarPlanta('${plantas.nome}')" id="btnEditar">Editar</button>
         <button onclick="deletarPlanta('${plantas.nome}')" id="btnRemover">Remover</button>
+        </div>
         <hr>
     </div>
     `;

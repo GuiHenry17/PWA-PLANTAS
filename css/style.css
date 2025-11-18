@@ -138,6 +138,8 @@ body {
 }
 
 #btnSalvar{
+    justify-self: center;
+    align-self: center;
     padding: 10px 20px;
     border: none;
     background: #22c452;
@@ -147,7 +149,9 @@ body {
 }
 
 #btnEditar{
-       padding: 10px 20px;
+    justify-self: center;
+    align-self: center;
+    padding: 10px 20px;
     border: none;
     background: #873f8a;
     color: white;
@@ -162,4 +166,24 @@ body {
     color: white;
     border-radius: 8px;
     cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+#planta-nome{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+@media screen and (max-width: 500px) {
+
+.lista img {
+    width: 250px;
+    height: 200px;
+}
+
 }
