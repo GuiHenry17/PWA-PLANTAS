@@ -1,183 +1,181 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+  background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
 #title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: #2b4a70;
-    letter-spacing: .5px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #2b4a70;
+  letter-spacing: 0.5px;
 }
 
 .container {
-    width: 100%;
-    max-width: 600px;
-    background: white;
-    padding: 20px;
-    border-radius: 14px;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
 }
 
 #camera {
-    text-align: center;
-    margin-bottom: 25px;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
 .camera-wrapper {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
 }
 
 #camera--view,
 #camera--sensor {
-    justify-self: center;
-    width: 48%;
-    border-radius: 12px;
-    background: #000;
-    object-fit: cover;
+  justify-self: center;
+  width: 48%;
+  border-radius: 12px;
+  background: #000;
+  object-fit: cover;
 }
 
 #camera--sensor {
-    display: none;
-    margin-top: 15px;
+  display: none;
+  margin-top: 15px;
 }
 
 #camera--trigger {
-    margin-top: 15px;
-    width: 100%;
-    padding: 12px;
-    border: none;
-    font-size: 16px;
-    background: #3b82f6;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  font-size: 16px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 #camera--trigger:hover {
-    background: #2563eb;
+  background: #2563eb;
 }
 
 .form {
-    width: 100%;
-    margin-bottom: 25px;
-    text-align: center;
+  width: 100%;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 #nome {
-    width: 80%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    margin-bottom: 12px;
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  margin-bottom: 12px;
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .buttons button {
-    padding: 10px 20px;
-    border: none;
-    background: #10b981;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background: #10b981;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .buttons button:hover {
-    background: #059669;
+  background: #059669;
 }
 
 .lista {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 12px;
-    background: #fafafa;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fafafa;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .lista img {
-    width: 400px;
-    height: 300px;
-    border-radius: 8px;
-    margin-top: 5px;
+  width: 400px;
+  height: 300px;
+  border-radius: 8px;
+  margin-top: 5px;
 }
 
 .lista button {
-    margin-top: 8px;
-    margin-bottom: 20px;
+  margin-top: 8px;
+  margin-bottom: 20px;
 }
 
-#btnSalvar{
-    justify-self: center;
-    align-self: center;
-    padding: 10px 20px;
-    border: none;
-    background: #22c452;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+#btnSalvar {
+  justify-self: center;
+  align-self: center;
+  padding: 10px 20px;
+  border: none;
+  background: #22c452;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-#btnEditar{
-    justify-self: center;
-    align-self: center;
-    padding: 10px 20px;
-    border: none;
-    background: #873f8a;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+#btnEditar {
+  justify-self: center;
+  align-self: center;
+  padding: 10px 20px;
+  border: none;
+  background: #873f8a;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-#btnRemover{
-    padding: 10px 20px;
-    border: none;
-    background: #a8201b;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
+#btnRemover {
+  padding: 10px 20px;
+  border: none;
+  background: #a8201b;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.buttons{
-    display: flex;
-    flex-direction: row;
+.buttons {
+  display: flex;
+  flex-direction: row;
 }
 
-#planta-nome{
-    margin-top: 30px;
-    display: flex;
-    justify-self: center;
-    align-self: center;
+#planta-nome {
+  margin-top: 30px;
+  display: flex;
+  justify-self: center;
+  align-self: center;
 }
 
 @media screen and (max-width: 500px) {
-
-.lista img {
+  .lista img {
     width: 250px;
     height: 200px;
-}
-
+  }
 }
