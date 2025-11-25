@@ -31,31 +31,31 @@ async function addData() {
   const arquivoImagem = window.fotoBlob;
 
   if (!arquivoImagem) {
-    showResult("Tire uma foto antes de salvar!");
-    return;
+    showResult("Tire uma foto antes de salvar!")
+    return
   }
   if (!nome) {
-    showResult("Adicione um nome antes de salvar!");
-    return;
+    showResult("Adicione um nome antes de salvar!")
+    return
   }
 
-  const tx = await db.transaction("plantas", "readwrite");
-  const store = tx.objectStore("plantas");
+  const tx = await db.transaction("plantas", "readwrite")
+  const store = tx.objectStore("plantas")
 
   await store.add({
     nome: nome,
     imagem: arquivoImagem,
-  });
+  })
 
-  await tx.done;
+  await tx.done
   const cameraOutput = document.getElementById("camera--sensor")
   cameraOutput.style.display = 'none';
 
   document.getElementById("nome").value = "";
-  showResult("Salvo com sucesso!");
+  showResult("Salvo com sucesso!")
 }
 
-function mostrarTabela(plantas) {
+function mostarPlantas(plantas) {
   const urlImagem = URL.createObjectURL(plantas.imagem);
 
   return `
@@ -76,18 +76,13 @@ async function getData() {
   const tx = await db.transaction("plantas", "readonly");
   const store = tx.objectStore("plantas");
 
-  const plantas = [];
-  let cursor = await store.openCursor(null, "prev");
-
-  while (cursor) {
-    plantas.push(cursor.value);
-    cursor = await cursor.continue();
-  }
+  const plantas = await store.getAll()
 
   if (plantas.length > 0) {
-    showResult(plantas.map(mostrarTabela).join(""));
+    plantas.reverse()
+    showResult(plantas.map(mostarPlantas).join(""))
   } else {
-    showResult("Nenhum registro encontrado!");
+    showResult("Nenhum registro encontrado!")
   }
 }
 
@@ -98,30 +93,30 @@ function showResult(text) {
 window.editarPlanta = async function (nome) {
   const tx = await db.transaction("plantas", "readonly");
   const store = tx.objectStore("plantas");
-  const plantas = await store.get(nome);
+  const planta = await store.get(nome);
 
-  if (!plantas) {
-    showResult("Planta não encontrada!");
-    return;
+  if (!planta) {
+    showResult("Planta não encontrada!")
+    return
   }
 
-  document.getElementById("nome").value = plantas.nome;
+  document.getElementById("nome").value = planta.nome;
 
   const input = document.getElementById("nome");
   input.scrollIntoView({
     behavior: "smooth",
     block: "center",
-  });
+  })
 
   const btn = document.getElementById("btnSalvar");
-  btn.textContent = "Atualizar";
+  btn.textContent = "Atualizar"
 
   btn.onclick = async function () {
-    await updateData(nome, plantas.imagem);
-    btn.textContent = "Salvar";
-    btn.onclick = addData;
-  };
-};
+    await updateData(nome, planta.imagem)
+    btn.textContent = "Salvar"
+    btn.onclick = addData
+  }
+}
 
 async function updateData(nomeAntigo, imagemAntiga) {
   const novoNome = document.getElementById("nome").value;
@@ -130,13 +125,13 @@ async function updateData(nomeAntigo, imagemAntiga) {
   const store = tx.objectStore("plantas");
 
   if (nomeAntigo !== novoNome) {
-    await store.delete(nomeAntigo);
+    await store.delete(nomeAntigo)
   }
 
   await store.put({
     nome: novoNome,
     imagem: imagemAntiga,
-  });
+  })
 
   await tx.done;
 
@@ -145,7 +140,9 @@ async function updateData(nomeAntigo, imagemAntiga) {
 }
 
 window.deletarPlanta = async function (nome) {
-  if (!confirm(`Deseja remover ${nome}?`)) return;
+  if (!confirm(`Deseja remover ${nome}?`)){
+     return
+  }
 
   const tx = await db.transaction("plantas", "readwrite");
   const store = tx.objectStore("plantas");
@@ -154,4 +151,4 @@ window.deletarPlanta = async function (nome) {
 
   showResult(`"${nome}" removido com sucesso!`);
   getData();
-};
+}
